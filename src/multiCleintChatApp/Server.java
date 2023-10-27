@@ -1,5 +1,4 @@
 package multiCleintChatApp;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -8,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Server {
-	private static final String[] isimler = {"Lea","Jonas","Johannes","Migen"};
+	private static final String[] isimler = { "Lea", "Jonas","Johannes","Migen"};
 	private static final String[] meslekler = {"Entwickler","Arzt","Lehrer","Polizist"};
 	
 	private static final String SERVER_IP = "127.0.0.1";
@@ -19,13 +18,10 @@ public class Server {
 	public static ArrayList<ClientHandler> getClients(){
 		return clients;
 	}
-	
 	//Thread lari yonetmek icin bir havuz olusturalim. en fazla 3 cleint a hizmetvermek istiyoruz
-	
-	
+
 	public static void main(String[] args) throws IOException {
-		
-		
+
 		ServerSocket serverSocket = new ServerSocket(PORT);
 		
 		while(true) {
@@ -42,11 +38,7 @@ public class Server {
 			pool.execute(clientThread);
 			
 		}
-		
-		
-		
-		
-		
+
 	}
 	public static String rastgeleKisiSec() {
 		int no = (int)(Math.random()*isimler.length);
